@@ -11,7 +11,7 @@ public class Ball : MonoBehaviour
     {
         _speedBall = 3;
         body = GetComponent<Rigidbody2D>();
-        SetStartDirectiont();
+        SetStartDirection();
     }
 
     private void Update()
@@ -32,7 +32,7 @@ public class Ball : MonoBehaviour
     }
     private void Stop()
     {
-
+        _speedBall = 0;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -70,10 +70,11 @@ public class Ball : MonoBehaviour
             }
         }
     }
-    private void SetStartDirectiont()
+    private void SetStartDirection()
     {
         _directionOfMove.y = 1;
-        _directionOfMove.x = Random.RandomRange(-1f, 1f);
+        _directionOfMove.x = Random.Range(-1f, 1f);
+        //_directionOfMove.x = Random.RandomRange(-1f, 1f);
     }
     private void NewDirection(Vector2 vec)
     {
