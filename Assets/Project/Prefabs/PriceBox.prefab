@@ -180,7 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b3bf3811e9ef2341b36fe87c6017cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bonus: {fileID: 3630172868068724642, guid: 3e82489ac3406cb4eb34a0505a9d03d0, type: 3}
+  bonus1: {fileID: 3630172868068724642, guid: 3e82489ac3406cb4eb34a0505a9d03d0, type: 3}
+  bonus2: {fileID: 3630172868068724642, guid: a63d13a38b938e34fa1095137a3ee92c, type: 3}
+  bonus3: {fileID: 3630172868068724642, guid: 7c6c024283953ff4c8137405659ae9e8, type: 3}
 --- !u!1 &1101128171502187189
 GameObject:
   m_ObjectHideFlags: 0
