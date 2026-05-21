@@ -1,9 +1,13 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
+    [SerializeField]
+    public BonusOne bonus;
+
     int _speedOfMove = 3;
     private void Update()
     {
@@ -20,10 +24,11 @@ public class Bonus : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         if (collision.TryGetComponent(out PlatformMove platformMove))
         {
+            bonus.Go();
             Destroy(gameObject);
         }
     }
+
 }
