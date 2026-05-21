@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bonus : MonoBehaviour
 {
     [SerializeField]
-    public BonusOne bonus;
+    public AbstaractBonus bonus;
 
     int _speedOfMove = 3;
     private void Update()
