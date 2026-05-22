@@ -26,7 +26,9 @@ public class Bonus : MonoBehaviour
     {
         if (collision.TryGetComponent(out PlatformMove platformMove))
         {
+            Debug.Log("colision player");
             bonus.Go();
+            Debug.Log("Bonus");
             Destroy(gameObject);
         }
     }
