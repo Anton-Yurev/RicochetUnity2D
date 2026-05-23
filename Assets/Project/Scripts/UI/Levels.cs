@@ -5,8 +5,8 @@ using UnityEngine;
 public class Levels : MonoBehaviour
 {
 
-    public int NumberOpenLevels { get; set; } = 5;
-    public Level[] levelsList = new Level[15];
+    public int NumberOpenLevels { get; set; } = 1;
+    public Level[] levelsList = new Level[20];
     public void Start()
     {
         for (int i = 0; i < levelsList.Length; i++)

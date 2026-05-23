@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class CloseButton : AbstractButton
+public class LoadLevel : AbstractButton
 {
     [SerializeField]
-    GameObject watchObject;
+    int level;
+
     public override void ActionButton()
     {
-        watchObject.SetActive(false);
+        SceneManager.LoadScene(level);
     }
 }

@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloseButton : AbstractButton
+public class OpenButton : AbstractButton
 {
     [SerializeField]
     GameObject watchObject;
     public override void ActionButton()
     {
-        watchObject.SetActive(false);
+        watchObject.SetActive(true);
     }
 }
