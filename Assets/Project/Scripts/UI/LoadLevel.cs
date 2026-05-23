@@ -10,6 +10,11 @@ public class LoadLevel : AbstractButton
 
     public override void ActionButton()
     {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
         SceneManager.LoadScene(level);
+        
     }
 }
