@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class StandartBox : Box
 {
-    static public Action<int> OnGetDamage = delegate { };
+    [SerializeField]
+    Points points;
+    public Action<int> OnGetDamage = delegate { };
     private int pointOfDestroy = 1;
     public override void BoxGetDamage()
     {
-        OnGetDamage(pointOfDestroy);
+        //OnGetDamage(pointOfDestroy);
+        points.AddPoints(pointOfDestroy);
         Destroy(gameObject);
     }
 }
