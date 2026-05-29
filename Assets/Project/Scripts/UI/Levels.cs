@@ -1,27 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Levels : MonoBehaviour
 {
+    [SerializeField]
+    Sprite _unlockedIcon;
 
-    public int NumberOpenLevels { get; set; } = 1;
-    public Level[] levelsList = new Level[20];
-    public void Start()
+    [SerializeField]
+    Sprite _lockedIcon;
+
+    public static int NumberOpenLevels { get; set; } = 3;
+    private void Start()
     {
-        for (int i = 0; i < levelsList.Length; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            levelsList[i] = new Level();
-        }
-        for (int i = 0; i < NumberOpenLevels; i++)
-        {
-            levelsList[i].OpenLevel();
-            Debug.Log(levelsList[i].IsOpenLevel);
-        }
-        Debug.Log("___________________________________");
-        for (int i = 0; i < levelsList.Length; i++)
-        {
-            Debug.Log(levelsList[i].IsOpenLevel);
+            transform.GetChild(i).gameObject.name=(i+1).ToString();
+            transform.GetChild(i).GetChild(0).GetComponent<Text>().text=(i+1).ToString();
+
+            if (i< NumberOpenLevels)
+            {
+                //transform.GetChild(i).GetComponent<Image>().sprite = _unlockedIcon;
+                transform.GetChild(i).GetComponent<Button>().interactable = true;
+            }else
+            {
+                //transform.GetChild(i).GetComponent<Image>().sprite = _lockedIcon;
+                transform.GetChild(i).GetComponent<Button>().interactable = false;
+            }
         }
     }
+
 }
