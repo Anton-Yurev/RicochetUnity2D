@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BonusTree : AbstaractBonus
+public class BonusTree : MonoBehaviour
 {
-    public override void Go()
+    public  void Go( PlatformMove platformMove)
     {
         Debug.Log("Tree");
     }

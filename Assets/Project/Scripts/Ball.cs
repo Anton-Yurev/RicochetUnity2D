@@ -7,6 +7,8 @@ public class Ball : MonoBehaviour
     private Vector2 _directionOfMove;
 
     private int _speedBall;
+    private int Force = 2;
+    private int initForce = 0;
     private void Awake()
     {
         _speedBall = 3;
@@ -38,8 +40,8 @@ public class Ball : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("UpEdge"))
         {
-            NewDirection(new Vector2(0,1));
-            
+            NewDirection(new Vector2(0, 1));
+
             if (collision.gameObject.GetComponentInParent<Box>())
             {
                 collision.gameObject.GetComponentInParent<Box>().BoxGetDamage();
@@ -48,6 +50,7 @@ public class Ball : MonoBehaviour
         if (collision.gameObject.CompareTag("DownEdge"))
         {
             NewDirection(new Vector2(0, 1));
+
             if (collision.gameObject.GetComponentInParent<Box>())
             {
                 collision.gameObject.GetComponentInParent<Box>().BoxGetDamage();
@@ -55,7 +58,8 @@ public class Ball : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("LeftEdge"))
         {
-            NewDirection(new Vector2(1, 0));
+            NewDirection(new Vector2(0, 1));
+
             if (collision.gameObject.GetComponentInParent<Box>())
             {
                 collision.gameObject.GetComponentInParent<Box>().BoxGetDamage();
@@ -63,7 +67,8 @@ public class Ball : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("RightEdge"))
         {
-            NewDirection(new Vector2(1, 0));
+            NewDirection(new Vector2(0, 1));
+
             if (collision.gameObject.GetComponentInParent<Box>())
             {
                 collision.gameObject.GetComponentInParent<Box>().BoxGetDamage();

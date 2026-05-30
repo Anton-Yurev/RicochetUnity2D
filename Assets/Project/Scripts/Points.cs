@@ -1,40 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Points : MonoBehaviour
 {
-    StandartBox standartBox;
-    //[SerializeField]
-    public Action<int> bonusUpdate = delegate {  };
-    //StandartBox standartBox;
     [SerializeField]
-    PointsUI pointsUI;
-    public int point { get; private set; }
+    StandartBox standartBox;
+    public float point { get; private set; }
     private void Start()
     {
         point = 0;
     }
-    public void AddPoints(int addPoint)
+    public void AddPoints(float addPoint)
     {
         point += addPoint;
-        pointsUI.UpdateText(point);
+        Debug.Log(point);
     }
     public void DeductPoints(int addPoint)
     {
         point -= addPoint;
-        pointsUI.UpdateText(addPoint);
     }
     private void OnEnable()
     {
-        //StandartBox.OnGetDamage += AddPoints;
-        //StandartBox.OnGetDamage += pointsUI.UpdateText;
-        
+        standartBox.OnGetDamage += AddPoints;
     }
     private void OnDisable()
     {
-        //StandartBox.OnGetDamage -= AddPoints;
-        //StandartBox.OnGetDamage -= pointsUI.UpdateText;
+        standartBox.OnGetDamage -= AddPoints;
     }
 }

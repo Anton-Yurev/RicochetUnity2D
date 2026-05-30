@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 1088408907914822258}
   - component: {fileID: 2576227511361519808}
   - component: {fileID: 8284477436877147562}
-  - component: {fileID: 5899900810372923067}
   - component: {fileID: 2096999210886162424}
-  - component: {fileID: -7399723544747162604}
+  - component: {fileID: 5681469097147975431}
   m_Layer: 0
   m_Name: Bonus
   m_TagString: Untagged
@@ -123,19 +122,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5899900810372923067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3630172868068724642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f50bf28cd04aa194a97da538de4d9990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: {fileID: -7399723544747162604}
 --- !u!50 &2096999210886162424
 Rigidbody2D:
   serializedVersion: 4
@@ -163,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7399723544747162604
+--- !u!114 &5681469097147975431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

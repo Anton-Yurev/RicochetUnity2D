@@ -1,13 +1,9 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bonus : MonoBehaviour
+public abstract class AbstractBonus : MonoBehaviour
 {
-    [SerializeField]
-    public AbstaractBonus bonus;
-
     int _speedOfMove = 3;
     private void Update()
     {
@@ -17,20 +13,18 @@ public class Bonus : MonoBehaviour
     {
         StartCoroutine("LifeTimeBonus");
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out Player platformMove))
+        {
+            Go(platformMove);
+            Destroy(gameObject);
+        }
+    }
     IEnumerator LifeTimeBonus()
     {
         yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out PlatformMove platformMove))
-        {
-            Debug.Log("colision player");
-            bonus.Go();
-            Debug.Log("Bonus");
-            Destroy(gameObject);
-        }
-    }
-
+    public abstract void Go(Player platformMove);
 }

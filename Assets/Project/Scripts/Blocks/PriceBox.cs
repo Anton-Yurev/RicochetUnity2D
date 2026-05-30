@@ -20,7 +20,7 @@ public class PriceBox : Box
     }
     public override void BoxGetDamage()
     {
-        GameObject bonus= list[Random.Range(0,3)];
+        GameObject bonus= list[Random.Range(0,1)];
         Instantiate(bonus, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

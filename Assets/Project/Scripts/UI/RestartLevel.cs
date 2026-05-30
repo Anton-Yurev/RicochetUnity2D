@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class ContinueButton : AbstractButton
+public class RestartLevel : AbstractButton
 {
-    [SerializeField]
-    GameObject pauseObject;
     public override void ActionButton()
     {
-        pauseObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
 }

@@ -12,18 +12,14 @@ public class PlatformMove : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector2.left * Time.deltaTime * _speedPlatform);
-            //if (transform.position.x < -8)
-            //{
-            //    transform.position = new Vector2(-8, transform.position.y);
-            //}
         }
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(new Vector3( 1 * Time.deltaTime * _speedPlatform,0,0));
-            //if (transform.position.x > 8)
-            //{
-            //    transform.position = new Vector2(8, transform.position.y);
-            //}
         }
+    }
+    public void UpSpeed()
+    {
+        _speedPlatform += 2;
     }
 }
